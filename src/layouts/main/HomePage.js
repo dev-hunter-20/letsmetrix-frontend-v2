@@ -78,7 +78,7 @@ const HomePage = () => {
   return (
     <Layout className="container">
       {!isMobile ? (
-        <HeaderComponent myApps={myApps} menu={menu}/>
+        <HeaderComponent myApps={myApps} menu={menu} isShowProfile={isShowProfile}/>
       ) : (
         <HeaderMobile onSearch={onSearch} menu={menu} isShowProfile={isShowProfile} myApps={myApps} />
       )}

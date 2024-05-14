@@ -16,13 +16,13 @@ import WatchAppChangeApiService from './../../api-services/api/WatchAppChangeApi
 
 const { Header } = Layout;
 
-const HeaderComponent = ({ myApps, menu }) => {
+const HeaderComponent = ({ myApps, menu, isShowProfile }) => {
   const [selectedKey, setSelectedKey] = useState(null);
   const [listSearch, setListSearch] = useState();
   const [loadingSearch, setLoadingSearch] = useState(false);
   const [isShowSearch, setIsShowSearch] = useState(false);
-  const [isShowProfile, setIsShowProfile] = useState();
   const router = useRouter();
+  const userName = Auth.getCurrentUser();
 
   const onClickHomepage = () => {
     setSelectedKey(null);
