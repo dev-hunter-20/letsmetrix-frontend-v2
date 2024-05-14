@@ -1,10 +1,7 @@
+import dynamic from 'next/dynamic';
 import './page.scss';
-import HeaderComponent from './../layouts/header/HeaderComponent';
 
+const HomePage = dynamic(() => import('./../layouts/main/HomePage'), { ssr: false });
 export default function Home() {
-  return (
-    <div className="container">
-      <HeaderComponent />
-    </div>
-  );
+  return <HomePage />;
 }
