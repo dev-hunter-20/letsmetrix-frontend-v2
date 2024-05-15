@@ -1,6 +1,6 @@
 'use client';
 import { Layout, Menu } from 'antd';
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import HeaderComponent from '../header/HeaderComponent';
 import HeaderMobile from '../header/header-mobile/HeaderMobile';
 import { useRouter } from 'next/navigation';
@@ -12,11 +12,12 @@ import {
   ShoppingCartOutlined,
 } from '@ant-design/icons';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Auth from '@/utils/store/Authentication';
-import Container from './../container/Container';
-import FooterSasi from './../footer/FooterSasi';
-import './NavbarPage.scss'
+import Container from '../container/Container';
+import FooterSasi from '../footer/FooterSasi';
+import './NavbarPage.scss';
+import { getMyAppsAction } from '@/redux/actions';
 
 const NavbarPage = ({ children }) => {
   const router = useRouter();
@@ -26,6 +27,19 @@ const NavbarPage = ({ children }) => {
   const isMobile = useSelector((state) => state.uiReducer.device.isMobile);
   const CMS_URL = process.env.NEXT_PUBLIC_REACT_APP_CMS_URL ?? 'https://cms.letsmetrix.com';
   const accessToken = Auth.getAccessToken();
+  const dispatch = useDispatch();
+  const [selectedKey, setSelectedKey] = useState(null);
+
+  const getMyApps = useCallback(() => {
+    setSelectedKey(null);
+    if (Auth.isAuthenticated()) {
+      dispatch(getMyAppsAction.request());
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    getMyApps();
+  }, []);
 
   const onSearch = (value) => {
     if (value) {
@@ -81,7 +95,13 @@ const NavbarPage = ({ children }) => {
   return (
     <Layout className="sasi-layout">
       {!isMobile ? (
-        <HeaderComponent myApps={myApps} menu={menu} isShowProfile={isShowProfile} />
+        <HeaderComponent
+          myApps={myApps}
+          menu={menu}
+          isShowProfile={isShowProfile}
+          selectedKeys={selectedKey}
+          setSelectedKey={setSelectedKey}
+        />
       ) : (
         <HeaderMobile onSearch={onSearch} menu={menu} isShowProfile={isShowProfile} myApps={myApps} />
       )}

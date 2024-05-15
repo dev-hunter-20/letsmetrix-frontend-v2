@@ -15,8 +15,7 @@ import WatchAppChangeApiService from './../../api-services/api/WatchAppChangeApi
 
 const { Header } = Layout;
 
-const HeaderComponent = ({ myApps, menu, isShowProfile }) => {
-  const [selectedKey, setSelectedKey] = useState(null);
+const HeaderComponent = ({ myApps, menu, isShowProfile, selectedKeys, setSelectedKey }) => {
   const [listSearch, setListSearch] = useState();
   const [loadingSearch, setLoadingSearch] = useState(false);
   const [isShowSearch, setIsShowSearch] = useState(false);
@@ -134,13 +133,13 @@ const HeaderComponent = ({ myApps, menu, isShowProfile }) => {
   const watchAppChange = async (id) => {
     await WatchAppChangeApiService.watchAppChange(id);
     router.push(`/app/${id}`);
-    if (typeof window !== 'undefined' && window.location.pathname.includes('/app')) {
+    if (window.location.pathname.includes('/app')) {
       router.refresh();
     }
   };
 
   const popupMyApp = (
-    <div>
+    <div className="scrollable-menu">
       {myApps && myApps.length > 0 ? (
         <Menu className="apps-dropdown">
           {myApps.map((item) => {
@@ -201,7 +200,7 @@ const HeaderComponent = ({ myApps, menu, isShowProfile }) => {
             </div>
             <div className="menu-right">
               <div className="list-menu">
-                <Menu mode="horizontal" defaultSelectedKeys={['4']} selectedKeys={[selectedKey]}>
+                <Menu mode="horizontal" defaultSelectedKeys={['4']} selectedKeys={[selectedKeys]}>
                   {MENU_ITEMS.map((item) => {
                     if (item.hasSub) {
                       return (

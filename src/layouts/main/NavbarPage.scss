@@ -115,7 +115,9 @@
         align-items: center;
         padding-left: 15px;
         .avatar-profile-header {
-          display: inline-block;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .profile-name {
           padding-right: 6px;
@@ -292,6 +294,24 @@
     background-color: white !important;
     color: black;
   }
+}
+
+.scrollable-menu {
+  max-height: 700px;
+  overflow-y: auto;
+}
+.scrollable-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollable-menu::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.scrollable-menu::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
 }
 
 @media (max-width: 1680px) {

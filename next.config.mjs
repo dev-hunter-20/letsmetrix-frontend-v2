@@ -14,6 +14,9 @@ const nextConfig = {
     );
     return config;
   },
+  images: {
+    domains: ['cdn.shopify.com'],
+  },
 };
 
 export default nextConfig;

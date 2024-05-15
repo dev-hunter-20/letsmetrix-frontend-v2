@@ -2,7 +2,7 @@ import { URL_API } from '@/constants/ApiUrl';
 import CommonCall from '../network/CommonCall';
 
 export default class WatchAppChangeApiService {
-  static async searchData(id) {
+  static async watchAppChange(id) {
     const body = {
       app_id: id,
     };

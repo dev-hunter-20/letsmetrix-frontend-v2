@@ -150,3 +150,34 @@ export const menuLinks = [
   { href: '/sitemap', title: 'Sitemap', class: 'faq__link' },
   { href: 'https://docs.letsmetrix.com/', title: 'Documents', class: 'faq__link' },
 ];
+
+export const COLUMNS = [
+  {
+    height: '160px',
+    color: '#CC9D24',
+  },
+  {
+    height: '210px',
+    color: 'linear-gradient(rgba(138, 106, 22, 1), rgba(178, 164, 35, 0))',
+  },
+  {
+    height: '250px',
+    color: 'linear-gradient(rgba(182, 131, 0, 1), rgba(181, 181, 181, 0))',
+  },
+  {
+    height: '210px',
+    color: 'linear-gradient(rgba(255, 194, 37, 1), rgba(182, 131, 0, 1))',
+  },
+  {
+    height: '150px',
+    color: 'linear-gradient(rgba(255, 194, 37, 1), rgba(255, 255, 255, 0.51))',
+  },
+  {
+    height: '265px',
+    color: 'linear-gradient(rgba(255, 238, 82, 1), rgba(182, 131, 0, 1))',
+  },
+  {
+    height: '345px',
+    color: 'linear-gradient(rgba(182, 131, 0, 1), rgba(255, 255, 255, 1))',
+  },
+];
