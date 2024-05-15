@@ -14,8 +14,11 @@ import {
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import Auth from '@/utils/store/Authentication';
+import Container from './../container/Container';
+import FooterSasi from './../footer/FooterSasi';
+import './NavbarPage.scss'
 
-const HomePage = () => {
+const NavbarPage = ({ children }) => {
   const router = useRouter();
   const [isShowConnectShopify, setIsShowConnectShopify] = useState(false);
   const [isShowProfile, setIsShowProfile] = useState(Auth.isAuthenticated());
@@ -30,7 +33,7 @@ const HomePage = () => {
         pathname: '/search',
         search: '?q=' + value,
       });
-      // router.refresh();
+      router.refresh();
     }
   };
 
@@ -76,14 +79,18 @@ const HomePage = () => {
   );
 
   return (
-    <Layout className="container">
+    <Layout className="sasi-layout">
       {!isMobile ? (
-        <HeaderComponent myApps={myApps} menu={menu} isShowProfile={isShowProfile}/>
+        <HeaderComponent myApps={myApps} menu={menu} isShowProfile={isShowProfile} />
       ) : (
         <HeaderMobile onSearch={onSearch} menu={menu} isShowProfile={isShowProfile} myApps={myApps} />
       )}
+      <Container isShowConnectShopify={isShowConnectShopify} setIsShowConnectShopify={setIsShowConnectShopify}>
+        {children}
+      </Container>
+      <FooterSasi />
     </Layout>
   );
 };
 
-export default HomePage;
+export default NavbarPage;

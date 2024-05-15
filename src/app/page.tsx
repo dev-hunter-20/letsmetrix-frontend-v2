@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import './page.scss';
 
-const HomePage = dynamic(() => import('./../layouts/main/HomePage'), { ssr: false });
-export default function Home() {
-  return <HomePage />;
+const NavbarPage = dynamic(() => import('../layouts/main/NavbarPage'), { ssr: false });
+export default function Home({ children }: { children: React.ReactNode }) {
+  return <NavbarPage>{children}</NavbarPage>;
 }

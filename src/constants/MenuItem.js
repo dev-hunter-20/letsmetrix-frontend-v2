@@ -87,3 +87,66 @@ export const MENU_TOP_APP_ITEM = [
     linkTo: '/installation_growth_rate',
   },
 ];
+
+export const BREADCRUMB_ROUTES = [
+  {
+    path: '/blogs',
+    label: 'Blogs',
+  },
+  {
+    path: '/categories',
+    label: 'Categories',
+  },
+  {
+    path: '/collections',
+    label: 'Collections',
+  },
+  {
+    path: '/top-new-apps',
+    label: 'Top new apps',
+  },
+  {
+    path: '/delisted-deleted',
+    label: 'Delisted and deleted apps',
+  },
+  {
+    path: '/integrations',
+    label: 'Integrations',
+  },
+  {
+    path: '/top-reviewed',
+    label: 'Top reviewed',
+  },
+  {
+    path: '/growth_rate',
+    label: 'Growth rate',
+  },
+  {
+    path: '/installation_growth_rate',
+    label: 'Installation growth_rate',
+  },
+  {
+    path: '/dashboard',
+    label: 'Apps dashboard',
+  },
+  {
+    path: '/developers',
+    label: 'Developers dashboard',
+  },
+  {
+    path: '/watching-apps',
+    label: 'Watching apps',
+  },
+];
+
+export const linkUnderline = [
+  { href: '/about-us', title: 'About Us' },
+  { href: '/privacy-policy', title: 'Privacy Policy' },
+  { href: '/terms-of-use', title: 'Terms of use' },
+];
+
+export const menuLinks = [
+  { href: '/pricing', title: 'Pricing', class: 'pricing__link' },
+  { href: '/sitemap', title: 'Sitemap', class: 'faq__link' },
+  { href: 'https://docs.letsmetrix.com/', title: 'Documents', class: 'faq__link' },
+];

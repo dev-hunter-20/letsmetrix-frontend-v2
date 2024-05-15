@@ -1,0 +1,326 @@
+@import '../../utils/theme/colors';
+@import '../../utils/theme/colors';
+
+#components-layout-demo-fixed-sider .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.link-usage {
+  margin: 15px 0;
+  text-decoration: underline;
+  color: #1890ff;
+}
+
+.menu-item-detail {
+  .ant-menu-item-selected {
+    color: black;
+  }
+  padding-left: 50px !important;
+  .menu-link {
+    font-weight: 500 !important;
+    color: black;
+    font-size: 16px;
+    &:hover,
+    &:focus,
+    &:active {
+      color: #ffc225 !important;
+    }
+  }
+}
+
+.sub-menu-item {
+  padding: 5px;
+  font-size: 15px;
+  a {
+    color: black;
+    &:hover {
+      color: #ffc225 !important;
+    }
+  }
+}
+
+.ant-pagination {
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    button {
+      border: none;
+      outline: none;
+    }
+  }
+  .ant-pagination-options-size-changer {
+    .ant-select-selector {
+      border-radius: 6px !important;
+    }
+  }
+  .ant-pagination-item-active {
+    background-color: #ffc225;
+  }
+  .ant-pagination-item {
+    border-radius: 50%;
+    padding: 4px;
+    border: none;
+    min-width: 36px;
+    height: 36px;
+    a {
+      font-size: 14px;
+      color: rgb(48, 46, 46);
+    }
+  }
+}
+
+.ant-popover-inner-content {
+  .list-my-app {
+    .item-my-app {
+      .link-detail-my-app {
+        padding: 5px 0px 5px 0px;
+        .list-change {
+          ul {
+            margin: 0;
+            padding-left: 10px;
+          }
+        }
+        .ant-badge {
+          margin-left: 0;
+          a {
+            margin-right: 2px !important;
+          }
+        }
+        .review-change {
+          margin-left: 10px;
+          font-weight: bold;
+        }
+        a {
+          color: black;
+        }
+      }
+    }
+  }
+}
+.sasi-layout {
+  .ant-layout-content {
+    min-height: 78vh;
+  }
+  .sasi-layout-background {
+    background-color: #eef1f3;
+    height: 80px;
+
+    .header-sasi {
+      // max-width: 1200px;
+      margin-right: auto;
+      margin-left: auto;
+      .header-profile {
+        text-align: right;
+        align-items: center;
+        padding-left: 15px;
+        .avatar-profile-header {
+          display: inline-block;
+        }
+        .profile-name {
+          padding-right: 6px;
+          font-weight: 500;
+          font-size: 16px;
+          white-space: nowrap;
+          width: 150px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .menu-sasi {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        line-height: 75px;
+        .menu-content {
+          display: flex;
+          align-items: center;
+          width: 80%;
+        }
+        .logo-sasi {
+          .ant-menu-inline,
+          .ant-menu-vertical,
+          .ant-menu-vertical-left {
+            border-right: none;
+          }
+
+          .ant-menu {
+            background: none;
+            border: none;
+            .ant-menu-item {
+              height: auto;
+              background-color: transparent;
+              padding-left: 0 !important;
+            }
+          }
+          cursor: pointer;
+          .img-responsive {
+            vertical-align: middle;
+            border-style: none;
+          }
+        }
+        .menu-right {
+          width: 100%;
+          .list-menu {
+            .close-icon {
+              font-size: 18px;
+              color: red;
+              margin-left: 5px;
+            }
+            .search-icon {
+              margin-left: 10px;
+              font-size: 24px;
+              color: #555d66;
+            }
+            .search-text {
+              display: none;
+            }
+            .search-data {
+              border-radius: 4px;
+              &:focus,
+              &:hover,
+              .ant-input-affix-wrapper-focused {
+                border-color: #ffc225 !important;
+                box-shadow: 0 0 0 2px rgba(238, 197, 17, 0.2) !important;
+              }
+              width: 260px;
+            }
+            .ant-menu-horizontal {
+              border-bottom: none;
+              color: #555d66;
+              text-align: start;
+
+              .ant-menu-overflow-item {
+                &::after {
+                  border: none;
+                }
+                &:hover {
+                  color: black;
+                  border-bottom: none;
+                }
+                .ant-menu-horizontal > .ant-menu-item a:hover {
+                }
+                .ant-menu-item a:hover {
+                }
+              }
+            }
+          }
+          .ant-menu {
+            background: none;
+            border-right: none;
+          }
+        }
+        .button-login {
+          padding-left: 2px;
+          &-styled {
+            background-color: rgba(255, 194, 37, 1) !important;
+            border-color: rgba(255, 194, 37, 1) !important;
+            color: rgba(67, 77, 86, 1) !important;
+            border-radius: 20px !important;
+            font-size: 15px !important;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+            height: 40px !important;
+            span {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ant-layout-content {
+    background: white;
+    .content-menu {
+      background-color: #ffffff;
+    }
+  }
+  .create-account {
+    display: flex;
+    background-color: #818a90;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 13px 50px;
+    .link-sign {
+      a {
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .link-create-account {
+      padding-left: 20px;
+      a {
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.App-logo {
+  max-height: 45px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.ant-menu-vertical .ant-menu-item:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+.ant-dropdown {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.apps-dropdown {
+  .ant-menu-item {
+    font-size: 15px;
+    a {
+      color: black;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  .ant-menu-item:hover {
+    background-color: #ffc225 !important;
+    color: black !important;
+  }
+  .ant-menu-item-selected {
+    background-color: white !important;
+    color: black;
+  }
+}
+
+@media (max-width: 1680px) {
+  .menu-content {
+    width: 100% !important;
+    .list-menu {
+      width: 100% !important;
+    }
+  }
+}
+
+@media (max-width: 1185px) {
+  .logo-sasi {
+    display: none;
+  }
+}
+.ant-menu-submenu-popup {
+  .menu-item-search {
+    text-align: center;
+    .search-icon {
+      display: none;
+    }
+    .search-text {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .close-icon {
+      display: none;
+    }
+  }
+}

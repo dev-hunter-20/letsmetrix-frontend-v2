@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import { Avatar, Button, Dropdown, Empty, Input, Layout, Menu, Tooltip } from 'antd';
-import './HeaderComponent.scss';
 import { CaretDownOutlined, CloseOutlined, LoadingOutlined, SearchOutlined } from '@ant-design/icons';
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
