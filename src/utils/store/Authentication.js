@@ -3,67 +3,102 @@ const currentUNKey = 'current-un-Key';
 const currentSubcriptionKey = 'current-subscription';
 
 function setToken(token) {
-  localStorage.setItem('accessToken', token);
-}
-function getAccessToken() {
-  if (typeof localStorage !== 'undefined') {
-    return localStorage.getItem('accessToken');
-  } else {
-    return null;
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('accessToken', token);
   }
 }
+function getAccessToken() {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('accessToken');
+  }
+  return null;
+}
 function setAccessToken(accessToken) {
-  return localStorage.setItem('accessToken', accessToken);
+  if (typeof window !== 'undefined') {
+    return localStorage.setItem('accessToken', accessToken);
+  }
+  return null;
 }
 function setRefreshToken(refreshToken) {
-  localStorage.setItem('refreshToken', refreshToken);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('refreshToken', refreshToken);
+  }
 }
 function getRefreshToken() {
-  return localStorage.getItem('refreshToken');
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('refreshToken');
+  }
+  return null;
 }
 
 function removeToken() {
-  localStorage.removeItem('accessToken');
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('accessToken');
+  }
 }
 
 function removeRefreshToken() {
-  localStorage.removeItem('refreshToken');
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('refreshToken');
+  }
 }
 
 function setCurrentUser(currentUser) {
-  localStorage.setItem(currentUserKey, currentUser);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(currentUserKey, currentUser);
+  }
 }
 
 function getCurrentUser() {
-  return localStorage.getItem(currentUserKey);
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem(currentUserKey);
+  }
+  return null;
 }
 
 function setCurrentUserName(currentUser) {
-  localStorage.setItem(currentUNKey, currentUser);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(currentUNKey, currentUser);
+  }
 }
 
 function getCurrentUserName() {
-  return localStorage.getItem(currentUNKey);
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem(currentUNKey);
+  }
+  return null;
 }
 
 function removeCurrentUserName() {
-  return localStorage.removeItem(currentUNKey);
+  if (typeof window !== 'undefined') {
+    return localStorage.removeItem(currentUNKey);
+  }
+  return null;
 }
 
 function setCurrentSubscription(currentSubType) {
-  localStorage.setItem(currentSubcriptionKey, currentSubType);
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(currentSubcriptionKey, currentSubType);
+  }
 }
 
 function getCurrentSubscription() {
-  return localStorage.getItem(currentSubcriptionKey);
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem(currentSubcriptionKey);
+  }
+  return null;
 }
 
 function removeCurrentSubscription() {
-  localStorage.removeItem(currentSubcriptionKey);
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(currentSubcriptionKey);
+  }
 }
 
 function removeCurrentUser() {
-  localStorage.removeItem(currentUserKey);
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem(currentUserKey);
+  }
 }
 
 function isAuthenticated() {

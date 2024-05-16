@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { DOMAIN, URL_API } from '../../constants/ApiUrl';
 import CommonCall from './../network/CommonCall';
+import CommonCallCustom from './../network/CommonCallCustom';
 
 export default class LandingPageApiService {
   static async getTop5Apps(id) {
@@ -32,15 +33,15 @@ export default class LandingPageApiService {
     return response;
   }
   static async getBlogSlug(slug) {
-    const response = await CommonCall(`${DOMAIN}admin-blog/wp-json/wp/v2/blogs?slug=${slug}`);
+    const response = await CommonCallCustom(`${DOMAIN}admin-blog/wp-json/wp/v2/blogs?slug=${slug}`);
     return response;
   }
   static async getAuthor(author) {
-    const response = await CommonCall(`${DOMAIN}admin-blog/wp-json/wp/v2/users/${author}`);
+    const response = await CommonCallCustom(`${DOMAIN}admin-blog/wp-json/wp/v2/users/${author}`);
     return response;
   }
   static async getImageUrl(featured_media) {
-    const response = await CommonCall(`${DOMAIN}admin-blog/wp-json/wp/v2/media/${featured_media}`);
+    const response = await CommonCallCustom(`${DOMAIN}admin-blog/wp-json/wp/v2/media/${featured_media}`);
     return response;
   }
   static async handleShowOnboard(show_onboarding, skip_step) {

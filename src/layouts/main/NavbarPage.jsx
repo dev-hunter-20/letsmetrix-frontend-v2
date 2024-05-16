@@ -29,6 +29,7 @@ const NavbarPage = ({ children }) => {
   const accessToken = Auth.getAccessToken();
   const dispatch = useDispatch();
   const [selectedKey, setSelectedKey] = useState(null);
+  const [isCheck, setIsCheck] = useState(false);
 
   const getMyApps = useCallback(() => {
     setSelectedKey(null);
@@ -39,6 +40,7 @@ const NavbarPage = ({ children }) => {
 
   useEffect(() => {
     getMyApps();
+    setIsCheck(true);
   }, []);
 
   const onSearch = (value) => {
@@ -94,17 +96,22 @@ const NavbarPage = ({ children }) => {
 
   return (
     <Layout className="sasi-layout">
-      {!isMobile ? (
-        <HeaderComponent
-          myApps={myApps}
-          menu={menu}
-          isShowProfile={isShowProfile}
-          selectedKeys={selectedKey}
-          setSelectedKey={setSelectedKey}
-        />
-      ) : (
-        <HeaderMobile onSearch={onSearch} menu={menu} isShowProfile={isShowProfile} myApps={myApps} />
+      {isCheck && (
+        <>
+          {!isMobile ? (
+            <HeaderComponent
+              myApps={myApps}
+              menu={menu}
+              isShowProfile={isShowProfile}
+              selectedKeys={selectedKey}
+              setSelectedKey={setSelectedKey}
+            />
+          ) : (
+            <HeaderMobile onSearch={onSearch} menu={menu} isShowProfile={isShowProfile} myApps={myApps} />
+          )}
+        </>
       )}
+
       <Container isShowConnectShopify={isShowConnectShopify} setIsShowConnectShopify={setIsShowConnectShopify}>
         {children}
       </Container>

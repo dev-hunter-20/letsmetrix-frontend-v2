@@ -15,7 +15,15 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['cdn.shopify.com'],
+    domains: ['cdn.shopify.com', 'letsmetrix.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'letsmetrix.com',
+        port: '',
+        pathname: '/admin-blog/wp-content/uploads/**',
+      },
+    ],
   },
 };
 
