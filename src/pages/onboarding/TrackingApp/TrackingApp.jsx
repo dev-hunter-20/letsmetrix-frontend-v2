@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useMemo, useState } from 'react';
 import './TrackingApp.scss';
@@ -8,6 +8,7 @@ import Image from 'next/image';
 import LandingPageApiService from './../../../api-services/api/LandingPageApiService';
 import { dataTracking } from './../Data';
 import { footerButton } from '../../../utils/functions';
+import Link from 'next/link';
 
 const TrackingApp = (props) => {
   const [children, setChildren] = useState(props.type);
@@ -46,19 +47,27 @@ const TrackingApp = (props) => {
       return (
         <>
           <Col span={16}>
-            <Image className="search-img" src="/image/search-app.gif" alt="" loading="lazy" />
+            <Image
+              className="search-img"
+              src="/image/search-app.gif"
+              alt=""
+              loading="lazy"
+              width={100}
+              height={500}
+              unoptimized
+            />
           </Col>
           <Col span={7} className="tracking-desc">
             <div style={{ fontSize: '22px', fontWeight: '500' }}>
               1. Application search
-              <a href="/explore">
+              <Link href="/explore">
                 <Image src="/image/open-link.png" alt="" width={20} height={20} style={{ marginLeft: '5px' }} />
-              </a>
+              </Link>
             </div>
             {dataTracking.map((item) => (
               <Row className="tracking-feature" key={item.addApp}>
                 <Col span={2}>
-                  <Image src="/image/arrow-feature.png" alt="" className="img" />
+                  <Image src="/image/arrow-feature.png" alt="" className="img" width={20} height={20} />
                 </Col>
                 <Col span={22}>{item.search}</Col>
               </Row>
@@ -76,7 +85,7 @@ const TrackingApp = (props) => {
             {dataTracking.map((item) => (
               <Row className="tracking-feature" key={item.addApp}>
                 <Col span={2}>
-                  <Image src="/image/arrow-feature.png" alt="" className="img" />
+                  <Image src="/image/arrow-feature.png" alt="" className="img" width={20} height={20} />
                 </Col>
                 <Col span={22}>{item.addApp}</Col>
               </Row>
@@ -84,7 +93,15 @@ const TrackingApp = (props) => {
             <Row style={{ marginLeft: '35px' }}>...</Row>
           </Col>
           <Col span={16}>
-            <Image className="search-img" src="/image/add-your-app.gif" alt="" loading="lazy" />
+            <Image
+              className="search-img"
+              src="/image/add-your-app.gif"
+              alt=""
+              loading="lazy"
+              width={100}
+              height={500}
+              unoptimized
+            />
           </Col>
         </>
       );
@@ -93,14 +110,22 @@ const TrackingApp = (props) => {
       return (
         <>
           <Col span={16}>
-            <Image className="search-img" src="/image/add-keyword.gif" alt="" loading="lazy" />
+            <Image
+              className="search-img"
+              src="/image/add-keyword.gif"
+              alt=""
+              loading="lazy"
+              width={100}
+              height={500}
+              unoptimized
+            />
           </Col>
           <Col span={7} className="tracking-desc">
             3. Add Keywords
             {dataTracking.map((item) => (
               <Row className="tracking-feature" key={item.addApp}>
                 <Col span={2}>
-                  <Image src="/image/arrow-feature.png" alt="" className="img" />
+                  <Image src="/image/arrow-feature.png" alt="" className="img" width={20} height={20} />
                 </Col>
                 <Col span={22}>{item.addKeyword}</Col>
               </Row>
@@ -118,7 +143,7 @@ const TrackingApp = (props) => {
           {dataTracking.map((item) => (
             <Row className="tracking-feature" key={item.addApp}>
               <Col span={2}>
-                <Image src="/image/arrow-feature.png" alt="" className="img" />
+                <Image src="/image/arrow-feature.png" alt="" className="img" width={20} height={20} />
               </Col>
               <Col span={22}>{item.addCompare}</Col>
             </Row>
@@ -126,7 +151,15 @@ const TrackingApp = (props) => {
           <Row style={{ marginLeft: '35px' }}>...</Row>
         </Col>
         <Col span={16}>
-          <Image className="search-img" src="/image/compare.gif" alt="" loading="lazy" />
+          <Image
+            className="search-img"
+            src="/image/compare.gif"
+            alt=""
+            loading="lazy"
+            width={100}
+            height={500}
+            unoptimized
+          />
         </Col>
       </>
     );

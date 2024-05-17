@@ -26,7 +26,6 @@ import TableApp from './table-app/TableApp';
 import moment from 'moment';
 import Link from 'next/link';
 import { COLUMNS } from '@/constants/MenuItem';
-// import Carousel from 'react-spring-3d-carousel';
 import Onboarding from './../onboarding/Onboarding';
 import MainBlog from './blog/MainBlog';
 import SecondaryBlog from './blog/SecondaryBlog';
@@ -326,8 +325,8 @@ const LandingPage = () => {
                       title: 'Most Reviewed',
                       data: renderDataSource(topApp && topApp.topReviews),
                     },
-                  ].map((item) => (
-                    <div key={item.id} className="bordered-left-styled">
+                  ].map((item, index) => (
+                    <div key={index} className="bordered-left-styled">
                       <TableApp item={item} />
                     </div>
                   ))}
@@ -381,8 +380,8 @@ const LandingPage = () => {
                         value: count.partner_count,
                         href: '/developers',
                       },
-                    ].map((item) => (
-                      <Col key={item.id} className="detail__box">
+                    ].map((item, index) => (
+                      <Col key={index} className="detail__box">
                         <Row>
                           <Link href={item.href}>
                             <Typography.Text className="total-title" level={1}>
@@ -425,8 +424,8 @@ const LandingPage = () => {
                       <>
                         <MainBlog slug={blogs[0].slug} />
                         <Col lg={13} md={24} className="blog-column">
-                          {[blogs[1].slug, blogs[2].slug].map((item) => (
-                            <SecondaryBlog key={item.id} slug={item} />
+                          {[blogs[1].slug, blogs[2].slug].map((item, index) => (
+                            <SecondaryBlog key={index} slug={item} />
                           ))}
                         </Col>
                       </>
@@ -453,9 +452,9 @@ const LandingPage = () => {
                   </Col>
                   <Col xl={12} className="download-cols">
                     <Row align="bottom" justify="center" style={{ height: '100%' }}>
-                      {COLUMNS.map((item) => (
+                      {COLUMNS.map((item, index) => (
                         <Col
-                          key={item.id}
+                          key={index}
                           className="cols"
                           style={{
                             height: item.height,

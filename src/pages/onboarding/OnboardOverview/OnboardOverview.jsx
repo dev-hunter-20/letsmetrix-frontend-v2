@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useMemo, useState } from 'react';
 import { Row, Col, Button } from 'antd';
@@ -45,19 +45,33 @@ const OnboardOverview = (props) => {
       return (
         <>
           <Col span={16}>
-            <Image className="search-img" src='/image/app-dashboard.gif' alt="" loading="lazy" />
+            <Image
+              className="search-img"
+              src="/image/app-dashboard.gif"
+              alt=""
+              loading="lazy"
+              width={100}
+              height={500}
+              unoptimized
+            />
           </Col>
           <Col span={7} className="tracking-desc">
             <div style={{ fontSize: '22px', fontWeight: '500' }}>
               1. Application Dashboard
               <Link href="https://letsmetrix.com/dashboard " target="_blank" rel="noopener noreferrer">
-                <Image src="/image/open-link.png" alt="" width={20} height={20} style={{ marginLeft: '5px', marginBottom: '5px' }} />
+                <Image
+                  src="/image/open-link.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  style={{ marginLeft: '5px', marginBottom: '5px' }}
+                />
               </Link>
             </div>
             {dataDashboard.map((item) => (
               <Row className="tracking-feature" key={item.app}>
                 <Col span={2}>
-                  <Image src="/image/arrow-feature.png" alt="" />
+                  <Image src="/image/arrow-feature.png" alt="" width={20} height={20} />
                 </Col>
                 <Col span={22}>{item.app}</Col>
               </Row>
@@ -74,13 +88,19 @@ const OnboardOverview = (props) => {
             <div style={{ fontSize: '22px', fontWeight: '500' }}>
               2. Developer Dashboard
               <Link href="https://letsmetrix.com/developers " target="_blank" rel="noopener noreferrer">
-                <Image src="/image/open-link.png" alt="" width={20} height={20} style={{ marginLeft: '5px', marginBottom: '5px' }} />
+                <Image
+                  src="/image/open-link.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  style={{ marginLeft: '5px', marginBottom: '5px' }}
+                />
               </Link>
             </div>
             {dataDashboard.map((item) => (
               <Row className="tracking-feature" key={item.app}>
                 <Col span={2}>
-                  <Image src="/image/arrow-feature.png" alt="" />
+                  <Image src="/image/arrow-feature.png" alt="" width={20} height={20} />
                 </Col>
                 <Col span={22}>{item.developer}</Col>
               </Row>
@@ -88,7 +108,15 @@ const OnboardOverview = (props) => {
             <Row style={{ marginLeft: '35px' }}>...</Row>
           </Col>
           <Col span={16}>
-            <Image className="search-img" src="/image/dev-dashboard.gif" alt="" loading="lazy" />
+            <Image
+              className="search-img"
+              src="/image/dev-dashboard.gif"
+              alt=""
+              loading="lazy"
+              width={100}
+              height={500}
+              unoptimized
+            />
           </Col>
         </>
       );
@@ -96,19 +124,33 @@ const OnboardOverview = (props) => {
     return (
       <>
         <Col span={16}>
-          <Image className="search-img" src="/image/review-dashboard.gif" alt="" loading="lazy" />
+          <Image
+            className="search-img"
+            src="/image/review-dashboard.gif"
+            alt=""
+            loading="lazy"
+            width={100}
+            height={500}
+            unoptimized
+          />
         </Col>
         <Col span={7} className="tracking-desc">
           <div style={{ fontSize: '22px', fontWeight: '500' }}>
             3. Review Dashboard
             <Link href="https://letsmetrix.com/dashboard/reviews " target="_blank" rel="noopener noreferrer">
-              <Image src={OpenLink} alt="" width={20} height={20} style={{ marginLeft: '5px', marginBottom: '5px' }} />
+              <Image
+                src="/image/open-link.png"
+                alt=""
+                width={20}
+                height={20}
+                style={{ marginLeft: '5px', marginBottom: '5px' }}
+              />
             </Link>
           </div>
           {dataDashboard.map((item) => (
             <Row className="tracking-feature" key={item.app}>
               <Col span={2}>
-                <Image src="/image/open-link.png" alt="" />
+                <Image src="/image/open-link.png" alt="" width={20} height={20} />
               </Col>
               <Col span={22}>{item.review}</Col>
             </Row>

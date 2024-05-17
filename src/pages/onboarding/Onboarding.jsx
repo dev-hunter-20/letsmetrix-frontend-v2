@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal, Row } from 'antd';
 import './Onboarding.scss';
 import Image from 'next/image';
@@ -7,16 +7,24 @@ import { dataOnboard } from './Data';
 import OnboardOverview from './OnboardOverview/OnboardOverview';
 import TrackingApp from './TrackingApp/TrackingApp';
 import DataManage from './DataManage/DataManage';
+import LandingPageApiService from './../../api-services/api/LandingPageApiService';
 
 const Onboarding = (props) => {
   const [type, setType] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const viewActionDetail = (url) => {
     setType(url);
   };
 
   const openChat = () => {
-    window.$crisp.push(['do', 'chat:open']);
+    if (isClient) {
+      window.$crisp.push(['do', 'chat:open']);
+    }
   };
 
   const backToMain = () => {
@@ -24,7 +32,7 @@ const Onboarding = (props) => {
   };
 
   const skip = async () => {
-    await FetchApi.handleShowOnboard(false, 'first-step');
+    await LandingPageApiService.handleShowOnboard(false, 'first-step');
     props.handleSuccess();
   };
 
@@ -45,11 +53,11 @@ const Onboarding = (props) => {
           What do you want to do first?
         </Row>
         <Row justify="center" style={{ marginTop: '90px', padding: '0 20px' }}>
-          {dataOnboard.map((item) => (
-            <div key={item.id} className="onboarding-action" onClick={() => viewActionDetail(item.url)}>
+          {dataOnboard.map((item, index) => (
+            <div key={index} className="onboarding-action" onClick={() => viewActionDetail(item.url)}>
               <div className="onboarding-action-title">{item.title}</div>
               <div className="onboarding-action-image">
-                <Image src={item.image} alt="" loading="lazy" className="img" />
+                <Image src={item.image} alt="" loading="lazy" className="img" width={100} height={100} />
               </div>
             </div>
           ))}
@@ -65,12 +73,14 @@ const Onboarding = (props) => {
 
   return (
     <div>
-      <Modal visible={true} className="onboarding" footer={null} width={'80%'} onCancel={skip}>
-        <Row justify="center">
-          <div className="onboarding-title">{`Welcome to Let's Metrix!`}</div>
-        </Row>
-        {renderAction(type)}
-      </Modal>
+      {isClient && (
+        <Modal open={true} className="onboarding" footer={null} width={'80%'} onCancel={skip}>
+          <Row justify="center">
+            <div className="onboarding-title">{`Welcome to Let's Metrix!`}</div>
+          </Row>
+          {renderAction(type)}
+        </Modal>
+      )}
     </div>
   );
 };

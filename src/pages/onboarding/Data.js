@@ -40,7 +40,7 @@ export const dataTracking = [
   {
     search: (
       <div className="flex items-center">
-        Click <Image src="/image/icon-search.png" alt="" style={{ margin: '0 3px' }} /> icon on menu bar.
+        Click <Image src="/image/icon-search.png" alt="" style={{ margin: '0 3px' }} width={25} height={25}/> icon on menu bar.
       </div>
     ),
     addApp: `Click "Add your app" button.`,
